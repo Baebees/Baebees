@@ -22,10 +22,10 @@ const styles = StyleSheet.create({
         flex: 1,
         paddingHorizontal: 10,
         flexDirection: "row",
+ 
     },
     google: {
-        marginLeft: 10,
-        width: '45%',
+        width: '50%',
         height: '3rem',
         borderWidth: 1,
         borderColor: "#a9a9a9",
@@ -34,8 +34,7 @@ const styles = StyleSheet.create({
         borderRadius: 5
     },
     facebook: {
-        marginLeft: 10,
-        width: '45%',
+        width: '50%',
         height: '3rem',
         borderWidth: 1,
         borderColor: "#a9a9a9",
