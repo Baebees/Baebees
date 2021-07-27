@@ -6,7 +6,7 @@ import Federation from '../Federation'
 const FormIn = () => {
     return (
         <Formik
-            initialValues={{ phoneNumber: '', email: '' }}
+            initialValues={{ phoneNumber: '', password: '' }}
             onSubmit={values => console.log(values)}
         >
             {({ handleChange, handleBlur, handleSubmit, values }) => (
