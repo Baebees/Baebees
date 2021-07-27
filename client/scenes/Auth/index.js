@@ -1,14 +1,20 @@
-import React, { Suspense } from 'react'
+import React, { Suspense, useState } from 'react'
 import { View, Text, StyleSheet, ActivityIndicator } from 'react-native'
 import Signin from './Signin'
+import Signup from './Signup'
+
 const Logo = React.lazy(() => import('../../assets/logo/Logo'))
 const Auth = () => {
+    const [ isMember, setMember ] = useState(false)
     return (
         <View style={styles.container}>
             <Suspense fallback={<ActivityIndicator size="large" color="#6495ed" style={{marginTop: '10%'}}/>} >
                 <Logo />
             </Suspense>
-            <Signin />
+            {   isMember ?
+                <Signin /> :
+                <Signup />
+            }
         </View>
     )
 }
