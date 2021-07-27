@@ -1,11 +1,11 @@
 import React, { Suspense } from 'react'
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text, StyleSheet, ActivityIndicator } from 'react-native'
 import Signin from './Signin'
 const Logo = React.lazy(() => import('../../assets/logo/Logo'))
 const Auth = () => {
     return (
         <View style={styles.container}>
-            <Suspense fallback={<Text>Loading</Text>}>
+            <Suspense fallback={<ActivityIndicator size="large" color="#6495ed" style={{marginTop: '10%'}}/>} >
                 <Logo />
             </Suspense>
             <Signin />
