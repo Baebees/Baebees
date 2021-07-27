@@ -11,6 +11,12 @@ const FormIn = () => {
         >
             {({ handleChange, handleBlur, handleSubmit, values }) => (
                 <View style={styles.container}>
+                    <View style={styles.switch}>
+                        <Text style={styles.question}>Don't have an account?</Text>
+                        <TouchableOpacity>
+                            <Text style={styles.singup}>&nbsp;sign up</Text>
+                        </TouchableOpacity>
+                    </View>
                     <Federation />
                     <Text style={styles.label}>Phone Number</Text>
                     <TextInput
@@ -21,6 +27,7 @@ const FormIn = () => {
                     />
                     <Text style={styles.label}>Password</Text>
                     <TextInput
+                        secureTextEntry={true}
                         style={styles.inputs}
                         onChangeText={handleChange('password')}
                         onBlur={handleBlur('password')}
@@ -63,14 +70,24 @@ const styles = StyleSheet.create({
         marginRight: 10,
         marginLeft: 10,
         borderRadius: 5,
-      },
-      buttonText: {
+    },
+    buttonText: {
         color: 'white'
-      },
-      label: {
+    },
+    label: {
         marginLeft: 10,
         color: '#a9a9a9'
-      }
+    },
+    switch: {
+        flexDirection: "row",
+        justifyContent: 'center',
+    },
+    question: {
+        fontWeight: '500'
+    },
+    singup: {
+        fontWeight: 'bold'
+    }
 })
 
 export default FormIn
