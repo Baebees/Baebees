@@ -1,11 +1,11 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native'
-import Auth from './scenes'
+import Main from './src/index'
 
 export default function App() {
   return (
     <View style={styles.body}>
-      <Auth />
+      <Main />
     </View>
   );
 }
