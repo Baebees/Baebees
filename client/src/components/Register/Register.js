@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
-import { View, Text, TextInput, StyleSheet, TouchableOpacity } from 'react-native'
+import { View, Text, TextInput, StyleSheet, TouchableOpacity, Dimensions} from 'react-native'
 import { Formik } from 'formik'
 import Federation from '../Federation'
+const { height, width } = Dimensions.get('screen')
 
 const Register = () => {
     return (
@@ -17,13 +18,15 @@ const Register = () => {
                             <Text style={styles.singin}>&nbsp;sign in</Text>
                         </TouchableOpacity>
                     </View>
+                    <View style={styles.federation}>
                     <Federation />
                     <View style={styles.orLabel}>
                         <View
                             style={{
                                 borderBottomColor: 'black',
                                 borderBottomWidth: 1,
-                                width: '45%'
+                                width: '45%',
+                                flex: 1
                             }}
                         />
                         <Text style={{margin: 5}}>Or</Text>
@@ -35,12 +38,15 @@ const Register = () => {
                             }}
                         />
                     </View>
+                    </View>
                     <Text style={styles.label}>Phone Number</Text>
+                    <View style={styles.form}>
                     <TextInput
                         style={styles.inputs}
                         onChangeText={handleChange('phoneNumber')}
                         onBlur={handleBlur('phoneNumber')}
                         value={values.phoneNumber}
+                        keyboardType= 'numeric'
                     />
                     <TouchableOpacity
                         style={styles.button}
@@ -48,6 +54,7 @@ const Register = () => {
                     >
                         <Text style={styles.buttonText}>Register</Text>
                     </TouchableOpacity>
+                    </View>
                 </View>
             )}
         </Formik>
@@ -57,23 +64,26 @@ const Register = () => {
 const styles = StyleSheet.create({
     container: {
         alignContent: 'center',
-        flex: 1
+        height: height * 0.5,
+        justifyContent: 'space-evenly'
     },
     inputs: {
         marginRight: 10,
         marginLeft: 10,
-        height: '3rem',
+        height: 48,
         borderWidth: 1,
         borderColor: "#a9a9a9",
         marginTop: 10,
         marginBottom: 10,
-        borderRadius: 5
+        borderRadius: 5,
+        paddingLeft: 10,
+        fontSize: 15
     },
     button: {
         alignItems: "center",
         backgroundColor: "#6495ed",
         padding: 10,
-        height: '3rem',
+        height: 48,
         marginTop: 10,
         marginBottom: 50,
         marginRight: 10,
@@ -85,7 +95,6 @@ const styles = StyleSheet.create({
     },
     label: {
         marginLeft: 10,
-        // marginTop: 50,
         color: '#a9a9a9'
     },
     switch: {
@@ -99,12 +108,18 @@ const styles = StyleSheet.create({
         fontWeight: 'bold'
     },
     orLabel: {
-        flex: 1,
         paddingHorizontal: 10,
         flexDirection: "row",
         alignItems: 'center',
         justifyContent: 'center',
-        marginTop: 5
+    },
+    federation: {
+        height: height * 0.15,
+        justifyContent: 'space-evenly'
+    },
+    form: {
+        height: height * 0.3,
+        justifyContent: 'space-evenly'
     }
 })
 
