@@ -1,44 +1,42 @@
-import React, { useRef, useLayoutEffect } from 'react'
-import { View, Image, Text, StyleSheet } from 'react-native'
-import "@expo/match-media"
-import { useMediaQuery } from 'react-responsive'
-import { TweenMax } from 'gsap'
+import React, { useLayoutEffect, useState } from 'react'
+import { View, Image, StyleSheet, Dimensions } from 'react-native'
+import { Asset } from 'expo-asset';
+import AppLoading from 'expo-app-loading';
+const { height } = Dimensions.get('screen')
 
 const Logo = () => {
-    const isSmallScreen = useMediaQuery({    
-        query: "(max-device-height: 730px)"  
-    });
-    const xSmallScreen = useMediaQuery({    
-        query: "(max-device-height: 645px)"  
-    });
-    let doggo = useRef(null)
-    
-    useLayoutEffect(() => {
-        TweenMax.from(doggo, 0.5, {
-             opacity: 0
-        }).then(() => {
-            TweenMax.fromTo(doggo, 1, {
-                rotation: 0
-            }, {
-                rotateX: 20,
-                delay: 1,
-                repeat: -1,
-                yoyo: true,
-            })
-        })
-    }, [])
 
-    return(
+    const [ isReady, setIsReady ] = useState(false)
+
+    useLayoutEffect(() => {
+    }, [isReady])
+
+    const _cacheResourcesAsync = async () => {
+        const images = [require('./logo.png')];
+
+        const cacheImages = images.map(image => {
+            return Asset.fromModule(image).downloadAsync();
+        });
+        return Promise.all(cacheImages);
+    }
+
+    if (!isReady) {
+        return (
+            <AppLoading
+                startAsync={_cacheResourcesAsync}
+                onFinish={() => setIsReady(true)}
+                onError={console.warn}
+            />
+        );
+    }
+
+    return (
         <View style={styles.container}>
-            {!isSmallScreen ?
-            <Image 
-            ref={el => doggo = el}
-            style={{width: '10rem', height: '10rem'}}
-            source={require('./logoo.svg')} /> :
-            xSmallScreen ?
-            <View ref={el => doggo = el} /> :
-            <Text ref={el => doggo = el} style={styles.loginText}>Log in</Text> 
-            }
+                 <Image
+                     style={{ width: 120 , height: 120 }}
+                     source={require('./logo.png')} 
+                    //  source="https://i.pinimg.com/originals/8e/a9/15/8ea915c2950a58cad7e184b94d6d4bac.jpg"
+                     /> 
         </View>
     )
 }
@@ -46,12 +44,8 @@ const Logo = () => {
 const styles = StyleSheet.create({
     container: {
         alignItems: 'center',
-        flex: 1,
-    },
-    loginText: {
-        marginTop: "10%",
-        fontSize: '2rem',
-        fontWeight: 'bold'
+        justifyContent: 'center',
+        height: height * 0.2
     }
 })
 
