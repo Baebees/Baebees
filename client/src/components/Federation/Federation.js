@@ -7,7 +7,7 @@ const Federation = () => {
                 style={styles.google}
             >
                 <Image 
-                style={{width: '2rem', height: '2rem'}}
+                style={{width: 32, height: 32}}
                 source={require('../../../assets/icons/google.png')} />
                 <Text style={styles.googleText}>Sign In With Google</Text>
             </TouchableOpacity>
@@ -15,7 +15,7 @@ const Federation = () => {
                 style={styles.facebook}
             >
                 <Image 
-                style={{width: '1rem', height: '2rem'}}
+                style={{width: 16, height: 32}}
                 source={require('../../../assets/icons/facebook.png')} />
                 <Text style={styles.facebookText}>Sign In With Facebook</Text>
             </TouchableOpacity>
@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         width: '50%',
-        height: '3rem',
+        height: 48,
         borderWidth: 1,
         borderColor: "#a9a9a9",
         marginTop: 10,
@@ -43,14 +43,14 @@ const styles = StyleSheet.create({
         flex: 1
     },
     googleText: {
-        fontSize: '0.6rem',
+        fontSize: 10,
         marginLeft: 2
     },  
     facebook: {
         alignItems: 'center',
         justifyContent: 'center',
         width: '50%',
-        height: '3rem',
+        height: 48,
         borderWidth: 1,
         borderColor: "#a9a9a9",
         marginTop: 10,
@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
         flex: 1
     },
     facebookText: {
-        fontSize: '0.6rem',
+        fontSize: 10,
         marginLeft: 2
     }
 })
