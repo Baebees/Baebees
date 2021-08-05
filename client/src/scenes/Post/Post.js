@@ -38,7 +38,7 @@ const Post = (props) => {
     };
     return (
         <View style={styles.container}>
-            <Camera style={styles.camera} type={type} ref={ref => { camera = ref }}>
+            <Camera style={styles.camera} type={type} ref={ref => { camera = ref }} useCamera2Api={true}>
                 <View style={styles.buttonContainer}>
                     <View
                         style={styles.buttons}
@@ -98,7 +98,7 @@ const styles = StyleSheet.create({
         padding: 20,
         borderWidth: 1,
         borderColor: colors.gray,
-        borderRadius: '100%'
+        borderRadius: 100
     },
     buttons: {
         flex: 1,

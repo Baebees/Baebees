@@ -2,33 +2,34 @@ import React, { Suspense, useState } from 'react'
 import { View, Text, StyleSheet, ActivityIndicator } from 'react-native'
 import Signin from './Signin'
 import Signup from './Signup'
+import { Dimensions } from 'react-native'
+import Logo from '../../../assets/logo/Logo'
+// const Logo = React.lazy(() => import('../../../assets/logo/Logo'))
 
-const Logo = React.lazy(() => import('../../../assets/logo/Logo'))
 const Auth = () => {
     const [ isMember, setMember ] = useState(false)
     return (
+        <View style={styles.outer}>
         <View style={styles.container}>
-            <Suspense fallback={<ActivityIndicator size="large" color="#6495ed" style={{marginTop: '10%'}}/>} >
+            {/* <Suspense fallback={<ActivityIndicator size="large" color="#6495ed" style={{marginTop: 10}}/>} > */}
                 <Logo />
-            </Suspense>
+            {/* </Suspense> */}
             {   isMember ?
                 <Signin /> :
                 <Signup />
             }
+        </View>
         </View>
     )
 }
 
 const styles = StyleSheet.create({
     container: {
-        width: '80vw',
-        height: '70vh',
+        width: Dimensions.get('screen').width * 0.8,
+        height: Dimensions.get('screen').height * 0.7,
         backgroundColor: '#FFF',
         borderRadius: 10,
         position: 'relative',
-        top: '10%',
-        left: '50%',
-        transform: [{ translateX: '-50%' }],
         shadowColor: "#000",
         shadowOffset: {
             width: 0,
@@ -38,6 +39,12 @@ const styles = StyleSheet.create({
         shadowRadius: 3.84,
 
         elevation: 5,
+    },
+    outer: {
+        width: Dimensions.get('window').width,
+        height: Dimensions.get('window').height,
+        alignItems: 'center',
+        justifyContent: 'center'
     }
 })
 
