@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
     inputs: {
         marginRight: 10,
         marginLeft: 10,
-        height: '3rem',
+        height: 48,
         borderWidth: 1,
         borderColor: "#a9a9a9",
         marginTop: 10,
@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
         alignItems: "center",
         backgroundColor: "#6495ed",
         padding: 10,
-        height: '3rem',
+        height: 48,
         marginTop: 10,
         marginBottom: 50,
         marginRight: 10,
