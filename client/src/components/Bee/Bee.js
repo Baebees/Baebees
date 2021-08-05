@@ -13,6 +13,7 @@ const Bee = (props) => {
             <View style={Styles.owner}>
                 <Avatar
                     rounded
+                    containerStyle={{ borderWidth: 3, borderColor: colors.gray, borderStyle:'solid' }}
                     size="medium"
                     source={{
                         uri:
@@ -25,6 +26,10 @@ const Bee = (props) => {
                 </TouchableOpacity>
             </View>
             {cloneElement(Children.only(child), { videoURI: '...' })}
+            <View style={Styles.stats}>
+                <Text style={Styles.likes}>5 Likes</Text>
+                <Text style={Styles.comments}>3 Comments</Text>
+            </View>
             <View style={Styles.reaction}>
                 <FontIcon
                     style={Styles.icon}
@@ -48,7 +53,6 @@ const Styles = StyleSheet.create({
         backgroundColor: '#fff'
     },
     reaction: {
-        flex: 1,
         flexDirection: 'row'
     },
     icon: {
@@ -66,7 +70,15 @@ const Styles = StyleSheet.create({
     },
     text: {
         color: colors.lightBlack,
-        fontWeight: 500
+        fontWeight: "500"
+    },
+    stats: {
+        flexDirection: 'row',
+        height: 24,
+        paddingHorizontal: 10,
+    },
+    likes: {
+        marginRight: 10
     }
 })
 
