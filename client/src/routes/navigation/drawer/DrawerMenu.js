@@ -1,28 +1,27 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { View, SafeAreaView, Text } from 'react-native'
-
+import { View, SafeAreaView, StyleSheet } from 'react-native'
+import { Dimensions } from 'react-native'
 import { DrawerActions } from '@react-navigation/native'
 import FontIcon from 'react-native-vector-icons/FontAwesome5'
 // import { colors } from 'theme'
+import Settings from '../../../components/Settings'
 
-const styles = {
+const styles = StyleSheet.create({
   root: {
-    flex: 1,
     flexDirection: 'column',
-    paddingHorizontal: 10,
   },
   head: {
     flexDirection: 'row',
     justifyContent: 'flex-end',
   },
   main: {
-    flex: 1,
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-  },
-}
+    marginVertical: Dimensions.get('screen').height * 0.05
+  }
+})
 
 const DrawerMenu = (props) => (
   <SafeAreaView style={styles.root}>
@@ -30,7 +29,7 @@ const DrawerMenu = (props) => (
       <FontIcon.Button
         name="times"
         size={20}
-        // color={colors.gray}
+        color={"gray"}
         backgroundColor="white"
         onPress={() => {
           props.navigation.dispatch(DrawerActions.closeDrawer())
@@ -38,7 +37,7 @@ const DrawerMenu = (props) => (
       />
     </View>
     <View style={styles.main}>
-      <Text>Drawer Menu</Text>
+      <Settings />
     </View>
   </SafeAreaView>
 )

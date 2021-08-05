@@ -1,24 +1,27 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { StyleSheet } from 'react-native'
+import { StyleSheet, TouchableOpacity } from 'react-native'
 import FontIcon from 'react-native-vector-icons/FontAwesome5'
 
 const styles = StyleSheet.create({
-  button: {
-    paddingLeft: 15,
-  },
+  icon: {
+    fontSize: 20,
+    padding: 20,
+  }
 })
 
 const HeaderLeft = ({ navigation }) => (
-  <FontIcon.Button
-    name="bars"
-    color="white"
-    backgroundColor="transparent"
-    onPress={() => {
-      navigation.openDrawer()
-    }}
-    style={styles.button}
-  />
+  <TouchableOpacity>
+    <FontIcon
+      style={styles.icon}
+      name="exchange-alt"
+      backgroundColor="transparent"
+      onPress={() => {
+        navigation.openDrawer()
+      }}
+      size={25}
+    />
+  </TouchableOpacity>
 )
 
 HeaderLeft.propTypes = {

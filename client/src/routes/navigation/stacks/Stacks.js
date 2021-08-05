@@ -9,6 +9,8 @@ import Search from '../../../scenes/Search'
 // import Details from 'scenes/details'
 import HeaderLeft from './HeaderLeft'
 import HeaderTitle from './HeaderTitle'
+// import Home Signature
+import Signature from '../../../../assets/Signature'
 
 // ------------------------------------
 // Constants
@@ -29,16 +31,20 @@ const navigationProps = {
 export const HomeNavigator = () => (
   <Stack.Navigator
     screenOptions={{
-      headerShown: false
+      headerShown: true
+      
     }}
+    initialRouteName="Home"
+    headerMode="screen"
+    screenOptions={navigationProps}
   >
     <Stack.Screen
       name="Home"
       component={Home}
       options={({ navigation }) => ({
-        title: 'Home',
+        title: '',
         headerLeft: () => <HeaderLeft navigation={navigation} />,
-        headerTitle: () => <HeaderTitle />,
+        headerRight: () => <Signature icon={'bell'}/>,
       })}
     />
   </Stack.Navigator>
@@ -104,14 +110,17 @@ export const ProfileNavigator = () => (
     initialRouteName="Profile"
     headerMode="screen"
     screenOptions={navigationProps}
+    screenOptions={{
+      headerShown: true
+      
+    }}
   >
     <Stack.Screen
       name="Profile"
       component={Profile}
       options={({ navigation }) => ({
-        title: 'Profile',
+        title: '',
         headerLeft: () => <HeaderLeft navigation={navigation} />,
-        headerTitle: () => <HeaderTitle />,
       })}
     />
     {/* <Stack.Screen

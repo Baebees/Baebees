@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { authenticate } from '../modules/app.module'
 import Main from './navigation'
 import Auth from '../scenes/Auth'
+import Connector from '../utils/connector'
 
 const Routes = () => {
   const { checked, loggedIn } = useSelector((state) => state.app)
@@ -21,4 +22,10 @@ const Routes = () => {
   return <Main />
 }
 
-export default Routes
+export default (props) => (
+  <Connector>
+    {({ actions, state: { app } }) => (
+      <Routes actions={actions.app} {...app} {...props} />
+    )}
+  </Connector>
+)
