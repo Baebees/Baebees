@@ -10,6 +10,8 @@ const videoPlayer = () => {
   return (
     <View style={styles.container}>
       <VideoPlayer
+      defaultControlsVisible={true}
+      //  showControlsOnLoad={true}
        videoProps={{
         shouldPlay: false,
         resizeMode: Video.RESIZE_MODE_CONTAIN,
