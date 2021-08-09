@@ -6,9 +6,13 @@ import Chat from '../../../scenes/Chat'
 import Profile from '../../../scenes/Profile'
 import Post from '../../../scenes/Post'
 import Search from '../../../scenes/Search'
+import UserProfile from '../../../scenes/UserProfile'
+import Media from '../../../scenes/Media'
+import Conversation from '../../../scenes/Conversation'
 // import Details from 'scenes/details'
 import HeaderLeft from './HeaderLeft'
 import HeaderTitle from './HeaderTitle'
+import HeaderBackward from './HeaderBackward'
 // import Home Signature
 import Signature from '../../../../assets/Signature'
 
@@ -32,7 +36,7 @@ export const HomeNavigator = () => (
   <Stack.Navigator
     screenOptions={{
       headerShown: true
-      
+
     }}
     initialRouteName="Home"
     headerMode="screen"
@@ -44,7 +48,7 @@ export const HomeNavigator = () => (
       options={({ navigation }) => ({
         title: '',
         headerLeft: () => <HeaderLeft navigation={navigation} />,
-        headerRight: () => <Signature icon={'bell'}/>,
+        headerRight: () => <Signature icon={'bell'} />,
       })}
     />
   </Stack.Navigator>
@@ -53,16 +57,34 @@ export const HomeNavigator = () => (
 export const SearchNavigator = () => (
   <Stack.Navigator
     screenOptions={{
-      headerShown: false
+      headerShown: true
     }}
   >
     <Stack.Screen
       name="Search"
       component={Search}
+    // options={({ navigation }) => ({
+    //   title: 'Search',
+    //   headerLeft: () => <HeaderLeft navigation={navigation} />,
+    //   headerTitle: () => <HeaderTitle />,
+    // })}
+    />
+    <Stack.Screen
+      name="UserProfile"
+      component={UserProfile}
       options={({ navigation }) => ({
-        title: 'Search',
-        headerLeft: () => <HeaderLeft navigation={navigation} />,
-        headerTitle: () => <HeaderTitle />,
+        title: 'UserProfile',
+        headerLeft: () => <HeaderBackward navigation={navigation} />,
+        headerTitle: () => <HeaderTitle title="Search" />,
+      })}
+    />
+    <Stack.Screen
+      name="Media"
+      component={Media}
+      options={({ navigation }) => ({
+        title: 'Media',
+        headerLeft: () => <HeaderBackward navigation={navigation} />,
+        headerTitle: () => <HeaderTitle title="User" />,
       })}
     />
   </Stack.Navigator>
@@ -89,19 +111,28 @@ export const PostNavigator = () => (
 
 export const ChatNavigator = () => (
   <Stack.Navigator
-  screenOptions={{
-    headerShown: false
-  }}
->
-  <Stack.Screen
-    name="Chat"
-    component={Chat}
-    options={({ navigation }) => ({
-      title: 'Chat',
-      headerLeft: () => <HeaderLeft navigation={navigation} />,
-      headerTitle: () => <HeaderTitle />,
-    })}
-  />
+    screenOptions={{
+      headerShown: true
+    }}
+  >
+    <Stack.Screen
+      name="Chat"
+      component={Chat}
+      options={({ navigation }) => ({
+        // title: 'Chat',
+        // headerLeft: () => <HeaderLeft navigation={navigation} />,
+        // headerTitle: () => <HeaderTitle />,
+      })}
+    />
+    <Stack.Screen
+      name="Conversation"
+      component={Conversation}
+      options={({ navigation }) => ({
+        title: '',
+        headerLeft: () => <HeaderBackward navigation={navigation} />,
+        headerRight: () => <Signature icon={'ellipsis-v'} />,
+      })}
+    />
   </Stack.Navigator>
 )
 
@@ -112,7 +143,7 @@ export const ProfileNavigator = () => (
     screenOptions={navigationProps}
     screenOptions={{
       headerShown: true
-      
+
     }}
   >
     <Stack.Screen
@@ -123,12 +154,14 @@ export const ProfileNavigator = () => (
         headerLeft: () => <HeaderLeft navigation={navigation} />,
       })}
     />
-    {/* <Stack.Screen
-      name="Details"
-      component={Details}
-      options={{
-        title: 'Details',
-      }}
-    /> */}
+    <Stack.Screen
+      name="Media"
+      component={Media}
+      options={({ navigation }) => ({
+        title: 'Media',
+        headerLeft: () => <HeaderBackward navigation={navigation} />,
+        headerTitle: () => <HeaderTitle title="Profile" />,
+      })}
+    />
   </Stack.Navigator>
 )

@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
   },
 })
 
-const HeaderTitle = () => <Text>title</Text>
+const HeaderTitle = ({ title }) => <Text>{title}</Text>
 
 HeaderTitle.propTypes = {}
 HeaderTitle.defaultProps = {}
