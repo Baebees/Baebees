@@ -1,13 +1,15 @@
 import React from 'react'
-import { View, Text} from 'react-native'
+import { View, Text, SafeAreaView} from 'react-native'
+import User from '../../components/User'
 
-const Chat = () => {
+const Chat = (props) => {
     return(
-        <View>
-            <Text>
-                chat list
-            </Text>
-        </View>
+        <SafeAreaView>
+            <User {...props} path='Conversation'/>
+            <User />
+            <User />
+            <User />
+        </SafeAreaView>
     )
 }
 
