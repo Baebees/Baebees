@@ -9,6 +9,7 @@ const Logo = () => {
     const [ isReady, setIsReady ] = useState(false)
 
     useLayoutEffect(() => {
+        _cacheResourcesAsync()
     }, [isReady])
 
     const _cacheResourcesAsync = async () => {
