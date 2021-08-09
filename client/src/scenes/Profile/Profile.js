@@ -31,7 +31,7 @@ const Profile = (props) => {
                     />
                 </TouchableOpacity>
             </View>
-            {view ? <Kiki /> : <MyBees />}
+            {view ? <Kiki /> : <MyBees {...props}/>}
         </View>
     )
 }
