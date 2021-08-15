@@ -9,6 +9,7 @@ import Search from '../../../scenes/Search'
 import UserProfile from '../../../scenes/UserProfile'
 import Media from '../../../scenes/Media'
 import Conversation from '../../../scenes/Conversation'
+import Bees from '../../../components/Bees'
 // import Details from 'scenes/details'
 import HeaderLeft from './HeaderLeft'
 import HeaderTitle from './HeaderTitle'
@@ -49,6 +50,24 @@ export const HomeNavigator = () => (
         title: '',
         headerLeft: () => <HeaderLeft navigation={navigation} />,
         headerRight: () => <Signature icon={'bell'} />,
+      })}
+    />
+    <Stack.Screen
+      name="Media"
+      component={Media}
+      options={({ navigation }) => ({
+        title: '',
+        headerLeft: () => <HeaderBackward navigation={navigation} />,
+        headerRight: () => <Signature icon={'ellipsis-v'} />,
+      })}
+    />
+    <Stack.Screen
+      name="UserProfile"
+      component={UserProfile}
+      options={({ navigation }) => ({
+        title: 'UserProfile',
+        headerLeft: () => <HeaderBackward navigation={navigation} />,
+        headerTitle: () => <HeaderTitle title="Home" />,
       })}
     />
   </Stack.Navigator>

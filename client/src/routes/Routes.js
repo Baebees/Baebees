@@ -6,7 +6,7 @@ import Main from './navigation'
 import Auth from '../scenes/Auth'
 import Connector from '../utils/connector'
 
-const Routes = () => {
+const Routes = (props) => {
   const { checked, loggedIn } = useSelector((state) => state.app)
   const dispatch = useDispatch()
 
