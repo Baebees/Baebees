@@ -8,12 +8,12 @@ const Home = (props) => {
 
     return (
         <View>
-            <Bees />
+            <Bees {...props}/>
             <ScrollView showsVerticalScrollIndicator={false}>
-            <Bee>
+            <Bee {...props}>
                 <VideoPlayer />
             </Bee>
-            <Bee>
+            <Bee {...props}>
                 <VideoPlayer />
             </Bee>
             <View style={{marginBottom: 90}}>
