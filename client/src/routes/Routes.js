@@ -19,7 +19,7 @@ const Routes = (props) => {
 
   // rendering
   if (!checked && !loggedIn) return <Auth />
-  return <Main />
+  return <Auth />
 }
 
 export default (props) => (
