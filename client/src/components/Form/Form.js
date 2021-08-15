@@ -3,7 +3,7 @@ import { View, Button, Text, TextInput, StyleSheet, TouchableOpacity } from 'rea
 import { Formik } from 'formik'
 import Federation from '../Federation'
 
-const FormIn = () => {
+const FormIn = ({ switchView }) => {
     return (
         <Formik
             initialValues={{ phoneNumber: '', password: '' }}
@@ -14,7 +14,9 @@ const FormIn = () => {
                     <View style={styles.switch}>
                         <Text style={styles.question}>Don't have an account?</Text>
                         <TouchableOpacity>
-                            <Text style={styles.singup}>&nbsp;sign up</Text>
+                            <Text style={styles.singup}
+                            onPress={()=> switchView(false) }
+                            >&nbsp;sign up</Text>
                         </TouchableOpacity>
                     </View>
                     <Federation />
