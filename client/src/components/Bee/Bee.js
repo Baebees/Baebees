@@ -89,10 +89,10 @@ const Bee = (props) => {
                 </View>
             </View>}
             {isCommentlVisible && <ScrollView style={Styles.commentsContainer}>
-                <Comment />
+                <Comment {...props}/>
             </ScrollView>}
             {isLikeVisible && <ScrollView style={Styles.commentsContainer}>
-                <Like />
+                <Like {...props}/>
             </ScrollView>}
         </View>
     )
