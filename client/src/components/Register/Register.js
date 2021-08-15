@@ -4,7 +4,7 @@ import { Formik } from 'formik'
 import Federation from '../Federation'
 const { height, width } = Dimensions.get('screen')
 
-const Register = () => {
+const Register = ({ switchView }) => {
     return (
         <Formik
             initialValues={{ phoneNumber: '' }}
@@ -15,7 +15,9 @@ const Register = () => {
                     <View style={styles.switch}>
                         <Text style={styles.question}>Have an account?</Text>
                         <TouchableOpacity>
-                            <Text style={styles.singin}>&nbsp;sign in</Text>
+                            <Text style={styles.singin}
+                            onPress={()=> switchView(true) }
+                            >&nbsp;sign in</Text>
                         </TouchableOpacity>
                     </View>
                     <View style={styles.federation}>
