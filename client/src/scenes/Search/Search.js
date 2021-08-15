@@ -5,7 +5,7 @@ import User from '../../components/User'
 const { height } = Dimensions.get('screen')
 
 const Search = (props) => {
-    const [isEmpty, setEmpty] = useState(false)
+    const [isEmpty, setEmpty] = useState(true)
     return (
         <View>
             <SearchComponent />
