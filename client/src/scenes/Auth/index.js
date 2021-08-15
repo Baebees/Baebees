@@ -7,7 +7,10 @@ import Logo from '../../../assets/logo/Logo'
 // const Logo = React.lazy(() => import('../../../assets/logo/Logo'))
 
 const Auth = () => {
-    const [ isMember, setMember ] = useState(false)
+    const [ isMember, setMember ] = useState(true)
+    const switchView = (view) => {
+        setMember(view)
+    }
     return (
         <View style={styles.outer}>
         <View style={styles.container}>
@@ -15,8 +18,8 @@ const Auth = () => {
                 <Logo />
             {/* </Suspense> */}
             {   isMember ?
-                <Signin /> :
-                <Signup />
+                <Signin switchView={switchView}/> :
+                <Signup switchView={switchView}/>
             }
         </View>
         </View>

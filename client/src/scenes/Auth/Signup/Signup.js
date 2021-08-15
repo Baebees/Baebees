@@ -2,10 +2,10 @@ import React from 'react'
 import { View } from 'react-native';
 import Register from '../../../components/Register'
 
-const Signup = () => {
+const Signup = (props) => {
     return (
         <View>
-            <Register />
+            <Register {...props}/>
         </View>
     )
 }
