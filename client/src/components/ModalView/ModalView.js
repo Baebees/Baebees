@@ -5,8 +5,8 @@ import { colors } from '../../theme/colors'
 import Comment from '../../components/Comment'
 const { height, width } = Dimensions.get('screen')
 
-const ModalView = ({ route, navigation }) => {
-    const { item } = route.params
+const ModalView = (props) => {
+    const { item } = props.route.params
     return (
         <View style={styles.container}>
             <Image
@@ -27,7 +27,7 @@ const ModalView = ({ route, navigation }) => {
                 />
             </View>
             <View>
-                <Comment />
+                <Comment {...props}/>
             </View>
         </View>
     )
