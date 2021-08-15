@@ -2,8 +2,8 @@ import React from 'react'
 import { TouchableOpacity, View, StyleSheet, ScrollView } from 'react-native'
 import { Avatar, Badge, Icon, withBadge } from 'react-native-elements'
 import { colors } from '../../theme/colors'
-
-const Bees = (props) => {
+const item = {src: "https://img.freepik.com/vecteurs-libre/homme-affaires-caractere-avatar-isole_24877-60111.jpg?size=338&ext=jpg"}
+const Bees = ({ navigation }) => {
     return (
         <View style={styles.layer}>
         <ScrollView
@@ -11,7 +11,9 @@ const Bees = (props) => {
             style={styles.container}
             showsHorizontalScrollIndicator={false}
         >
-            <TouchableOpacity style={styles.bee}>
+            <TouchableOpacity style={styles.bee} 
+            onPress={()=> navigation.navigate('Media', { from: 'Home', item })}
+            >
                 <Avatar
                     rounded
                     containerStyle={{ borderWidth: 3, borderColor: colors.gray, borderStyle:'solid' }}
