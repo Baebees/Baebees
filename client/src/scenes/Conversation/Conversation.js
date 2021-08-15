@@ -3,7 +3,8 @@ import { View, Text, StyleSheet, Dimensions, TextInput, TouchableOpacity, SafeAr
 import { colors } from '../../theme/colors'
 import Message from '../../components/Message'
 import FontIcon from 'react-native-vector-icons/FontAwesome5'
-const { height, width } = Dimensions.get('screen')
+import { useBottomTabBarHeight } from "@react-navigation/bottom-tabs";
+const { height, width } = Dimensions.get('window')
 
 const conversation = [
     { friend: 'Hello' },
@@ -12,12 +13,23 @@ const conversation = [
     { owner: 'I"m fine thank you' },
 ]
 const Conversation = (props) => {
+
+    const bottomTabBarHeight = useBottomTabBarHeight();
+
     return (
         <View style={styles.container}>
             <SafeAreaView style={styles.messagesArea}>
-            <Message />
+                <Message />
             </SafeAreaView>
-            <View style={styles.inputContainer}>
+            <View style={styles.inputContainer, {
+                flexDirection: 'row',
+                paddingVertical: 10,
+                alignContent: 'space-around',
+                marginBottom: bottomTabBarHeight,
+                paddingHorizontal: 5,
+                height: height * 0.2,
+                backgroundColor: colors.clearWhite,
+            }}>
                 <TextInput
                     style={styles.input}
                     placeholder="Write a message..."
@@ -49,13 +61,11 @@ const styles = StyleSheet.create({
         marginRight: 10
     },
     inputContainer: {
-        flexDirection: 'row',
-        justifyContent: 'flex-end',
-        alignContent: 'space-around',
-        paddingHorizontal: 5
+
+ 
     },
     messagesArea: {
-        height: height * 0.8
+        height: height * 0.8,
     }
 })
 
