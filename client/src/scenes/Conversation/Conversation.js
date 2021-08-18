@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { View, Text, StyleSheet, Dimensions, TextInput, TouchableOpacity, SafeAreaView } from 'react-native'
 import { colors } from '../../theme/colors'
 import Message from '../../components/Message'
@@ -15,11 +15,12 @@ const conversation = [
 const Conversation = (props) => {
 
     const bottomTabBarHeight = useBottomTabBarHeight();
-
+    const messageText = (txt) => ( setMsg(txt) )
     return (
         <View style={styles.container}>
             <SafeAreaView style={styles.messagesArea}>
-                <Message />
+                <Message sender="friend" messager='friendMessage' textField="friend"/>
+                <Message sender="owner" messager='ownerMessage' textField="owner"/>
             </SafeAreaView>
             <View style={styles.inputContainer, {
                 flexDirection: 'row',
@@ -33,6 +34,7 @@ const Conversation = (props) => {
                 <TextInput
                     style={styles.input}
                     placeholder="Write a message..."
+                    onChangeText={messageText}
                     multiline
                 />
                 <TouchableOpacity>
