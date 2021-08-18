@@ -37,7 +37,7 @@ const DrawerMenu = (props) => (
       />
     </View>
     <View style={styles.main}>
-      <Settings />
+      <Settings {...props}/>
     </View>
   </SafeAreaView>
 )

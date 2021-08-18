@@ -10,6 +10,13 @@ import UserProfile from '../../../scenes/UserProfile'
 import Media from '../../../scenes/Media'
 import Conversation from '../../../scenes/Conversation'
 import Bees from '../../../components/Bees'
+import AccountSettings from '../../../scenes/AccountSettings'
+import Confidentiality from '../../../scenes/Confidentiality'
+import Track from '../../../scenes/Track'
+import Subscription from '../../../scenes/Subscription'
+import Contact from '../../../scenes/Contact'
+import Payment from '../../../scenes/Payment'
+import ProfileInformations from '../../../scenes/ProfileInformations'
 // import Details from 'scenes/details'
 import HeaderLeft from './HeaderLeft'
 import HeaderTitle from './HeaderTitle'
@@ -25,8 +32,11 @@ const Stack = createStackNavigator()
 
 const navigationProps = {
   headerTintColor: 'white',
-  // headerStyle: { backgroundColor: colors.darkPurple },
-  headerTitleStyle: { fontSize: 18 },
+  // headerStyle: { backgroundColor: "purple" },
+  headerTitleStyle: {
+    fontSize: 30,
+    marginLeft: 50
+  },
 }
 
 // ------------------------------------
@@ -68,6 +78,69 @@ export const HomeNavigator = () => (
         title: 'UserProfile',
         headerLeft: () => <HeaderBackward navigation={navigation} />,
         headerTitle: () => <HeaderTitle title="Home" />,
+      })}
+    />
+    <Stack.Screen
+      name="AccountSettings"
+      component={AccountSettings}
+      options={({ navigation }) => ({
+        title: 'AccountSettings',
+        headerLeft: () => <HeaderBackward navigation={navigation} />,
+        headerTitle: () => <HeaderTitle title="Go Back" />,
+      })}
+    />
+    <Stack.Screen
+      name="Confidentiality"
+      component={Confidentiality}
+      options={({ navigation }) => ({
+        title: 'Confidentiality',
+        headerLeft: () => <HeaderBackward navigation={navigation} />,
+        headerTitle: () => <HeaderTitle title="Go Back" />,
+      })}
+    />
+    <Stack.Screen
+      name="Track"
+      component={Track}
+      options={({ navigation }) => ({
+        title: 'Track',
+        headerLeft: () => <HeaderBackward navigation={navigation} />,
+        headerTitle: () => <HeaderTitle title="Go Back" />,
+      })}
+    />
+    <Stack.Screen
+      name="Subscription"
+      component={Subscription}
+      options={({ navigation }) => ({
+        title: 'Subscription',
+        headerLeft: () => <HeaderBackward navigation={navigation} />,
+        headerTitle: () => <HeaderTitle title="Go Back" />,
+      })}
+    />
+    <Stack.Screen
+      name="Contact"
+      component={Contact}
+      options={({ navigation }) => ({
+        title: 'Contact',
+        headerLeft: () => <HeaderBackward navigation={navigation} />,
+        headerTitle: () => <HeaderTitle title="Go Back" />,
+      })}
+    />
+    <Stack.Screen
+      name="Payment"
+      component={Payment}
+      options={({ navigation }) => ({
+        title: 'Payment',
+        headerLeft: () => <HeaderBackward navigation={navigation} />,
+        headerTitle: () => <HeaderTitle title="Go Back" />,
+      })}
+    />
+    <Stack.Screen
+      name="ProfileInformations"
+      component={ProfileInformations}
+      options={({ navigation }) => ({
+        title: 'ProfileInformations',
+        headerLeft: () => <HeaderBackward navigation={navigation} />,
+        headerTitle: () => <HeaderTitle title="Go Back" />,
       })}
     />
   </Stack.Navigator>
