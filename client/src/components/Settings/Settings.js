@@ -5,13 +5,13 @@ import FontIcon from 'react-native-vector-icons/FontAwesome5'
 import { colors } from '../../theme/colors'
 import { Dimensions } from 'react-native'
 
-const Settings = (props) => {
+const Settings = ({ navigation }) => {
     return (
         <View style={Styles.container}>
             <View style={Styles.av}>
                 <Avatar
                     rounded
-                    containerStyle={{ borderWidth: 3, borderColor: colors.gray, borderStyle:'solid' }}
+                    containerStyle={{ borderWidth: 3, borderColor: colors.gray, borderStyle: 'solid' }}
                     size="large"
                     source={{
                         uri:
@@ -21,71 +21,81 @@ const Settings = (props) => {
                 <Text style={Styles.username}>Username</Text>
             </View>
             <View style={Styles.items}>
-                <ListItem bottomDivider>
-                    <View style={{width: 25}}>
-                    <FontIcon
-                        name="sliders-h"
-                        color={colors.lightBlack}
-                        backgroundColor="transparent"
-                        size={20}
-                    />
+                <ListItem bottomDivider
+                    onPress={() => navigation.navigate('AccountSettings')}
+                >
+                    <View style={{ width: 25 }}>
+                        <FontIcon
+                            name="sliders-h"
+                            color={colors.lightBlack}
+                            backgroundColor="transparent"
+                            size={20}
+                        />
                     </View>
                     <ListItem.Content>
                         <ListItem.Title>Settings</ListItem.Title>
                     </ListItem.Content>
                     <ListItem.Chevron />
                 </ListItem>
-                <ListItem bottomDivider>
-                <View style={{width: 25}}>
-                    <FontIcon
-                        name="user-shield"
-                        color={colors.lightBlack}
-                        backgroundColor="transparent"
-                        size={20}
-                    />
-                </View>
+                <ListItem bottomDivider
+                    onPress={() => navigation.navigate('Confidentiality')}
+                >
+                    <View style={{ width: 25 }}>
+                        <FontIcon
+                            name="user-shield"
+                            color={colors.lightBlack}
+                            backgroundColor="transparent"
+                            size={20}
+                        />
+                    </View>
                     <ListItem.Content>
                         <ListItem.Title >Confidentiality</ListItem.Title>
                     </ListItem.Content>
                     <ListItem.Chevron />
                 </ListItem>
-                <ListItem bottomDivider>
-                <View style={{width: 25}}>
-                    <FontIcon
-                        name="map-marked-alt"
-                        color={colors.lightBlack}
-                        backgroundColor="transparent"
-                        size={20}
-                    />
-                </View>
+                <ListItem bottomDivider
+                    onPress={() => navigation.navigate('Track')}
+                >
+                    <View style={{ width: 25 }}>
+                        <FontIcon
+                            name="map-marked-alt"
+                            color={colors.lightBlack}
+                            backgroundColor="transparent"
+                            size={20}
+                        />
+                    </View>
                     <ListItem.Content>
                         <ListItem.Title >Track</ListItem.Title>
                     </ListItem.Content>
                     <ListItem.Chevron />
                 </ListItem>
-                <ListItem bottomDivider>
-                <View style={{width: 25}}>
-                    <FontIcon
-                        name="map-pin"
-                        color={colors.lightBlack}
-                        backgroundColor="transparent"
-                        size={20}
-                    />
-                </View>
+                <ListItem bottomDivider
+                    onPress={() => navigation.navigate('Subscription')}
+                >
+                    <View style={{ width: 25 }}>
+                        <FontIcon
+                            name="map-pin"
+                            color={colors.lightBlack}
+                            backgroundColor="transparent"
+                            size={20}
+                        />
+                    </View>
                     <ListItem.Content>
                         <ListItem.Title >Subscription</ListItem.Title>
                     </ListItem.Content>
                     <ListItem.Chevron />
                 </ListItem>
-                <ListItem bottomDivider>
-                <View style={{width: 25}}>
-                    <FontIcon
-                        name="headset"
-                        color={colors.lightBlack}
-                        backgroundColor="transparent"
-                        size={20}
-                    />
-                </View>
+                <ListItem bottomDivider
+                    onPress={() => navigation.navigate('Contact')}
+                >
+                    <View style={{ width: 25 }}>
+                        <FontIcon
+                            name="headset"
+                            color={colors.lightBlack}
+                            backgroundColor="transparent"
+                            size={20}
+                        />
+                    </View>
                     <ListItem.Content>
                         <ListItem.Title >Contact Us</ListItem.Title>
                     </ListItem.Content>
@@ -93,10 +103,10 @@ const Settings = (props) => {
                 </ListItem>
             </View>
             <View style={Styles.button}>
-                <Button 
-                  title="Delete Account"
-                  accessibilityLabel="Learn more about this purple button"
-                  />
+                <Button
+                    title="Delete Account"
+                    accessibilityLabel="Learn more about this purple button"
+                />
             </View>
         </View>
     )
