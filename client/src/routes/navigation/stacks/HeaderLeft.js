@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { StyleSheet, TouchableOpacity } from 'react-native'
 import FontIcon from 'react-native-vector-icons/FontAwesome5'
+import { FontAwesome5 } from '@expo/vector-icons';
 
 const styles = StyleSheet.create({
   icon: {
@@ -12,14 +13,14 @@ const styles = StyleSheet.create({
 
 const HeaderLeft = ({ navigation }) => (
   <TouchableOpacity>
-    <FontIcon
+    <FontAwesome5
       style={styles.icon}
-      name="exchange-alt"
-      backgroundColor="transparent"
+      name="bars"
       onPress={() => {
         navigation.openDrawer()
       }}
       size={25}
+      backgroundColor="transparent"
     />
   </TouchableOpacity>
 )

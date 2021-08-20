@@ -17,10 +17,12 @@ import Subscription from '../../../scenes/Subscription'
 import Contact from '../../../scenes/Contact'
 import Payment from '../../../scenes/Payment'
 import ProfileInformations from '../../../scenes/ProfileInformations'
+import Notifications from '../../../scenes/Notifications'
 // import Details from 'scenes/details'
 import HeaderLeft from './HeaderLeft'
 import HeaderTitle from './HeaderTitle'
 import HeaderBackward from './HeaderBackward'
+import HeaderRight from './HeaderRight'
 // import Home Signature
 import Signature from '../../../../assets/Signature'
 
@@ -59,7 +61,7 @@ export const HomeNavigator = () => (
       options={({ navigation }) => ({
         title: '',
         headerLeft: () => <HeaderLeft navigation={navigation} />,
-        headerRight: () => <Signature icon={'bell'} />,
+        headerRight: () => <Signature icon={'bell'} navigation={navigation} />,
       })}
     />
     <Stack.Screen
@@ -68,7 +70,7 @@ export const HomeNavigator = () => (
       options={({ navigation }) => ({
         title: '',
         headerLeft: () => <HeaderBackward navigation={navigation} />,
-        headerRight: () => <Signature icon={'ellipsis-v'} />,
+        headerRight: () => <HeaderRight icon={'ellipsis-v'} />,
       })}
     />
     <Stack.Screen
@@ -139,6 +141,15 @@ export const HomeNavigator = () => (
       component={ProfileInformations}
       options={({ navigation }) => ({
         title: 'ProfileInformations',
+        headerLeft: () => <HeaderBackward navigation={navigation} />,
+        headerTitle: () => <HeaderTitle title="Go Back" />,
+      })}
+    />
+    <Stack.Screen
+      name="Notifications"
+      component={Notifications}
+      options={({ navigation }) => ({
+        title: 'Notifications',
         headerLeft: () => <HeaderBackward navigation={navigation} />,
         headerTitle: () => <HeaderTitle title="Go Back" />,
       })}
@@ -222,7 +233,7 @@ export const ChatNavigator = () => (
       options={({ navigation }) => ({
         title: '',
         headerLeft: () => <HeaderBackward navigation={navigation} />,
-        headerRight: () => <Signature icon={'ellipsis-v'} />,
+        headerRight: () => <HeaderRight icon={'ellipsis-v'} />,
       })}
     />
   </Stack.Navigator>
