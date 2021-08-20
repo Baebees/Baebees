@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, Dimensions, SafeAreaView, TouchableOpacity, StyleSheet, FlatList } from 'react-native'
+import { View, Text, Dimensions, SafeAreaView, ScrollView, TouchableOpacity, StyleSheet, FlatList } from 'react-native'
 import { colors } from '../../theme/colors'
 import { Avatar } from 'react-native-elements';
 const { height, width } = Dimensions.get('screen')
