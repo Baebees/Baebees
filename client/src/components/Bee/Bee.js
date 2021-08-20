@@ -112,7 +112,8 @@ const Styles = StyleSheet.create({
     container: {
         backgroundColor: '#fff',
         borderBottomWidth: 1,
-        borderBottomColor: colors.darkGray
+        borderBottomColor: colors.darkGray,
+        borderRadius: 10
     },
     reaction: {
         alignItems: 'center',
@@ -144,8 +145,8 @@ const Styles = StyleSheet.create({
         flexDirection: 'row',
         height: height * 0.05,
         paddingHorizontal: 10,
-        borderBottomWidth: 1,
-        borderBottomColor: colors.darkGray,
+        // borderBottomWidth: 1,
+        // borderBottomColor: colors.darkGray,
     },
     likes: {
         marginRight: 10,
@@ -172,10 +173,10 @@ const Styles = StyleSheet.create({
         flexDirection: 'row',
     },
     commentsContainer: {
-        padding: 10,
+        // padding: 10,
         borderTopWidth: 1,
         maxHeight: height * 0.4,
-        borderTopColor: colors.darkGray
+        borderTopColor: colors.darkGray,
     }
 })
 
