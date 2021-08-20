@@ -20,20 +20,30 @@ const Comment = ({ navigation }) => {
         <SafeAreaView style={styles.container}>
             {comments.map(user => {
                 return (
-                    <View style={styles.comment} key={user.id}>
-                        <Avatar
-                            rounded
-                            containerStyle={{ borderWidth: 3, borderColor: colors.gray, borderStyle: 'solid' }}
-                            size="medium"
-                            source={{
-                                uri: user.user.src
+                    <View key={user.id}>
+                        <View style={styles.comment}>
+                            <Avatar
+                                rounded
+                                containerStyle={{ borderWidth: 3, borderColor: colors.gray, borderStyle: 'solid' }}
+                                size="medium"
+                                source={{
+                                    uri: user.user.src
+                                }}
+                                onPress={() => navigation.navigate('UserProfile')}
+                            />
+                            <TouchableOpacity style={styles.description}>
+                                <Text style={styles.text}>{user.user.username}</Text>
+                                <Text style={styles.text}>{user.comment}</Text>
+                            </TouchableOpacity>
+                        </View>
+                        <View
+                            style={{
+                                borderBottomColor: colors.gray,
+                                borderBottomWidth: 1,
+                                width: width * 0.8,
+                                alignSelf: 'center'
                             }}
-                            onPress={()=> navigation.navigate('UserProfile')}
                         />
-                        <TouchableOpacity style={styles.description}>
-                            <Text style={styles.text}>{user.user.username}</Text>
-                            <Text style={styles.text}>{user.comment}</Text>
-                        </TouchableOpacity>
                     </View>
                 )
             })}
