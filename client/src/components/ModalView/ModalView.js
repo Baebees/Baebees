@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { View, Image, StyleSheet, TextInput, TouchableOpacity, Dimensions } from 'react-native'
+import { View, Image, StyleSheet, ScrollView, TextInput, TouchableOpacity, Dimensions } from 'react-native'
 import FontIcon from 'react-native-vector-icons/FontAwesome5'
 import { colors } from '../../theme/colors'
 import { Avatar } from 'react-native-elements';
@@ -11,7 +11,10 @@ const ModalView = (props) => {
     const [comment, isComment] = useState(false)
 
     return (
-        <View style={styles.container}>
+        <ScrollView 
+        style={styles.container}
+        showsVerticalScrollIndicator={false}
+        >
             <Image
                 style={{ height: height * 0.5, width: width }}
                 source={item.src}
@@ -58,7 +61,7 @@ const ModalView = (props) => {
             <View>
                 <Comment {...props}/>
             </View>
-        </View>
+        </ScrollView>
     )
 }
 
