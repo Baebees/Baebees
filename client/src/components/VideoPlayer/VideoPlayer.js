@@ -1,6 +1,6 @@
 import React, { useState, useRef }from 'react';
 import { View, StyleSheet, Button, Text } from 'react-native';
-import { Video, AVPlaybackStatus } from 'expo-av';
+import { Video, AVPlaybackStatus, VideoNaturalSize } from 'expo-av';
 import { Dimensions } from 'react-native';
 
 const VideoPlayer = () => {
@@ -17,6 +17,7 @@ const VideoPlayer = () => {
         resizeMode="contain"
         isLooping
         onPlaybackStatusUpdate={status => setStatus(() => status)}
+        style={styles.video}
       />
     </View>
   );
@@ -27,7 +28,8 @@ const styles = StyleSheet.create({
     height: Dimensions.get('screen').height/2
   },
   video: {
-      maxHeight: Dimensions.get('screen').height/2
+      height: Dimensions.get('screen').height /3,
+      flex: 1
   }
 })
 
