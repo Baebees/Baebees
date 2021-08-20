@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
 import { View, TouchableOpacity, StyleSheet } from 'react-native'
+import { Avatar, Badge, Icon, withBadge } from 'react-native-elements'
 // import AppLoading from 'expo-app-loading'
 import FontIcon from 'react-native-vector-icons/FontAwesome5'
 import { colors } from '../../src/theme/colors'
 
-const Signature = ({icon}) => {
+const Signature = ({ icon, navigation }) => {
 
     // const [ isReady, setIsReady ] = useState(false)
 
@@ -29,14 +30,23 @@ const Signature = ({icon}) => {
 
     return (
         <View style={styles.container}>
-            <TouchableOpacity>
-                <FontIcon
-                    style={styles.icon}
-                    name={icon}
-                    color={colors.lightBlack}
-                    size={25}
-                    solid={false}
-                />
+            <TouchableOpacity
+                onPress={navigation ? () => { navigation.navigate('Notifications') } : null}
+            >
+                <View style={{ padding: 20 }}>
+                    <FontIcon
+                        style={styles.icon}
+                        name={icon}
+                        color={colors.lightBlack}
+                        size={25}
+                        solid={false}
+                    />
+                    <Badge
+                        status="error"
+                        containerStyle={styles.status}
+                        textStyle={{ fontWeight: 40 }}
+                    />
+                </View>
             </TouchableOpacity>
         </View>
     )
@@ -55,8 +65,10 @@ const styles = StyleSheet.create({
     },
     icon: {
         fontSize: 20,
-        padding: 20,
     },
+    status: {
+        position: "absolute",
+    }
 })
 
 export default Signature
