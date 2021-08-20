@@ -7,7 +7,7 @@ import Logo from '../../../assets/logo/Logo'
 // const Logo = React.lazy(() => import('../../../assets/logo/Logo'))
 
 const Auth = () => {
-    const [ isMember, setMember ] = useState(true)
+    const [ isMember, setMember ] = useState(false)
     const switchView = (view) => {
         setMember(view)
     }

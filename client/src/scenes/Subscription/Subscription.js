@@ -1,11 +1,11 @@
 import React from 'react'
 import { Button } from 'react-native'
-import { View, Text, Image, StyleSheet, Dimensions } from 'react-native'
+import { View, Text, Image, ScrollView, StyleSheet, Dimensions } from 'react-native'
 const { height, width } = Dimensions.get('window')
 
 const Subscription = ({ navigation }) => {
     return (
-        <View style={styles.container}>
+        <ScrollView contentContainerStyle={styles.container}>
             <View style={styles.description}>
                 <Image
                     style={{ height: height * 0.2, width: height * 0.2 }}
@@ -41,22 +41,21 @@ const Subscription = ({ navigation }) => {
                 />
             </View>
             </View>
-        </View>
+        </ScrollView>
     )
 }
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
+        paddingVertical: 20,
         justifyContent: 'space-evenly',
         alignItems: 'center'
     },
     description: {
-        alignItems: 'center',
-        // marginTop: height * 0.1
+        alignItems: 'center'
     },
     confirmation: {
-        height: height * 0.5,
+        height: height * 0.7,
         width: width * 0.8,
         alignItems: "center",
         justifyContent: 'space-evenly'
@@ -66,7 +65,7 @@ const styles = StyleSheet.create({
         height: 30,
     },
     reminder: {
-        fontSize: 30,
+        fontSize: 25,
         fontWeight: '600'
     },
     txt: {
