@@ -18,6 +18,13 @@ import Contact from '../../../scenes/Contact'
 import Payment from '../../../scenes/Payment'
 import ProfileInformations from '../../../scenes/ProfileInformations'
 import Notifications from '../../../scenes/Notifications'
+import ChangeName from '../../../scenes/Settings/ChangeName'
+import ChangePassword from '../../../scenes/Settings/ChangePassword'
+import ChangePhoneNumber from '../../../scenes/Settings/ChangePhoneNumber'
+import ChangeNotificationsSettings from '../../../scenes/Settings/ChangeNotificationsSettings'
+import ChangeAdsSettings from '../../../scenes/Settings/ChangeAdsSettings'
+import Help from '../../../scenes/Help'
+import About from '../../../scenes/About'
 // import Details from 'scenes/details'
 import HeaderLeft from './HeaderLeft'
 import HeaderTitle from './HeaderTitle'
@@ -150,6 +157,69 @@ export const HomeNavigator = () => (
       component={Notifications}
       options={({ navigation }) => ({
         title: 'Notifications',
+        headerLeft: () => <HeaderBackward navigation={navigation} />,
+        headerTitle: () => <HeaderTitle title="Go Back" />,
+      })}
+    />
+    <Stack.Screen
+      name="ChangeName"
+      component={ChangeName}
+      options={({ navigation }) => ({
+        title: 'ChangeName',
+        headerLeft: () => <HeaderBackward navigation={navigation} />,
+        headerTitle: () => <HeaderTitle title="Go Back" />,
+      })}
+    />
+    <Stack.Screen
+      name="ChangePassword"
+      component={ChangePassword}
+      options={({ navigation }) => ({
+        title: 'ChangePassword',
+        headerLeft: () => <HeaderBackward navigation={navigation} />,
+        headerTitle: () => <HeaderTitle title="Go Back" />,
+      })}
+    />
+    <Stack.Screen
+      name="ChangePhoneNumber"
+      component={ChangePhoneNumber}
+      options={({ navigation }) => ({
+        title: 'ChangePhoneNumber',
+        headerLeft: () => <HeaderBackward navigation={navigation} />,
+        headerTitle: () => <HeaderTitle title="Go Back" />,
+      })}
+    />
+    <Stack.Screen
+      name="ChangeNotificationsSettings"
+      component={ChangeNotificationsSettings}
+      options={({ navigation }) => ({
+        title: 'ChangeNotificationsSettings',
+        headerLeft: () => <HeaderBackward navigation={navigation} />,
+        headerTitle: () => <HeaderTitle title="Go Back" />,
+      })}
+    />
+    <Stack.Screen
+      name="ChangeAdsSettings"
+      component={ChangeAdsSettings}
+      options={({ navigation }) => ({
+        title: 'ChangeAdsSettings',
+        headerLeft: () => <HeaderBackward navigation={navigation} />,
+        headerTitle: () => <HeaderTitle title="Go Back" />,
+      })}
+    />
+    <Stack.Screen
+      name="Help"
+      component={Help}
+      options={({ navigation }) => ({
+        title: 'Help',
+        headerLeft: () => <HeaderBackward navigation={navigation} />,
+        headerTitle: () => <HeaderTitle title="Go Back" />,
+      })}
+    />
+    <Stack.Screen
+      name="About"
+      component={About}
+      options={({ navigation }) => ({
+        title: 'About',
         headerLeft: () => <HeaderBackward navigation={navigation} />,
         headerTitle: () => <HeaderTitle title="Go Back" />,
       })}
