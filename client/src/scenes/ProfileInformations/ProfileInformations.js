@@ -6,12 +6,14 @@ import { colors } from '../../theme/colors'
 import TopMargin from '../../components/TopMargin'
 const { width } = Dimensions.get('window')
 
-const ProfileInformations = (props) => {
+const ProfileInformations = ({ navigation }) => {
     return (
         <View style={styles.container}>
             <TopMargin />
-            <View style={{width: width}}>
-                <ListItem bottomDivider>
+            <View style={{ width: width }}>
+                <ListItem bottomDivider
+                    onPress={() => navigation.navigate('ChangeName')}
+                >
                     <View style={{ width: 25 }}>
                         <FontIcon
                             name="signature"
@@ -21,11 +23,13 @@ const ProfileInformations = (props) => {
                         />
                     </View>
                     <ListItem.Content>
-                        <ListItem.Title >Change Fullname</ListItem.Title>
+                        <ListItem.Title >Change FullName</ListItem.Title>
                     </ListItem.Content>
                     <ListItem.Chevron />
                 </ListItem>
-                <ListItem bottomDivider>
+                <ListItem bottomDivider
+                    onPress={() => navigation.navigate('ChangePassword')}
+                >
                     <View style={{ width: 25 }}>
                         <FontIcon
                             name="key"
@@ -39,7 +43,9 @@ const ProfileInformations = (props) => {
                     </ListItem.Content>
                     <ListItem.Chevron />
                 </ListItem>
-                <ListItem bottomDivider>
+                <ListItem bottomDivider
+                    onPress={() => navigation.navigate('ChangePhoneNumber')}
+                >
                     <View style={{ width: 25 }}>
                         <FontIcon
                             name="phone-alt"
