@@ -1,0 +1,2 @@
+import ChangeNotificationsSettings from './ChangeNotificationsSettings'
+export default ChangeNotificationsSettings
