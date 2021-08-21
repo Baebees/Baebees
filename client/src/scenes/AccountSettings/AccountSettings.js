@@ -27,7 +27,9 @@ const AccountSettings = ({ navigation }) => {
                     </ListItem.Content>
                     <ListItem.Chevron />
                 </ListItem>
-                <ListItem bottomDivider>
+                <ListItem bottomDivider
+                onPress={()=> navigation.navigate('ChangeNotificationsSettings')}
+                >
                     <View style={{ width: 25 }}>
                         <FontIcon
                             name="bell"
@@ -41,7 +43,9 @@ const AccountSettings = ({ navigation }) => {
                     </ListItem.Content>
                     <ListItem.Chevron />
                 </ListItem>
-                <ListItem bottomDivider>
+                <ListItem bottomDivider
+                onPress={()=> navigation.navigate('ChangeAdsSettings')}
+                >
                     <View style={{ width: 25 }}>
                         <FontIcon
                             name="ad"
@@ -55,7 +59,9 @@ const AccountSettings = ({ navigation }) => {
                     </ListItem.Content>
                     <ListItem.Chevron />
                 </ListItem>
-                <ListItem bottomDivider>
+                <ListItem bottomDivider
+                onPress={()=> navigation.navigate('Help')}
+                >
                     <View style={{ width: 25 }}>
                         <FontIcon
                             name="question-circle"
@@ -69,7 +75,9 @@ const AccountSettings = ({ navigation }) => {
                     </ListItem.Content>
                     <ListItem.Chevron />
                 </ListItem>
-                <ListItem bottomDivider>
+                <ListItem bottomDivider
+                onPress={()=> navigation.navigate('About')}
+                >
                     <View style={{ width: 25 }}>
                         <FontIcon
                             name="info-circle"
