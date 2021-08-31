@@ -11,9 +11,9 @@ const ModalView = (props) => {
     const [comment, isComment] = useState(false)
 
     return (
-        <ScrollView 
-        style={styles.container}
-        showsVerticalScrollIndicator={false}
+        <ScrollView
+            style={styles.container}
+            showsVerticalScrollIndicator={false}
         >
             <Image
                 style={{ height: height * 0.5, width: width }}
@@ -59,7 +59,7 @@ const ModalView = (props) => {
                 </View>
             </View>}
             <View>
-                <Comment {...props}/>
+                <Comment {...props} />
             </View>
         </ScrollView>
     )
