@@ -6,7 +6,7 @@ const { height } = Dimensions.get('screen')
 
 const Logo = () => {
 
-    const [ isReady, setIsReady ] = useState(false)
+    const [isReady, setIsReady] = useState(false)
 
     useLayoutEffect(() => {
         _cacheResourcesAsync()
@@ -33,11 +33,10 @@ const Logo = () => {
 
     return (
         <View style={styles.container}>
-                 <Image
-                     style={{ width: 120 , height: 120 }}
-                     source={require('./logo.png')} 
-                    //  source="https://i.pinimg.com/originals/8e/a9/15/8ea915c2950a58cad7e184b94d6d4bac.jpg"
-                     /> 
+            <Image
+                style={{ width: 120, height: 120 }}
+                source={require('./logo.png')}
+            />
         </View>
     )
 }
