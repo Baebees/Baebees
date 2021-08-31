@@ -8,6 +8,8 @@ import Post from '../../../scenes/Post'
 import Search from '../../../scenes/Search'
 import UserProfile from '../../../scenes/UserProfile'
 import Media from '../../../scenes/Media'
+import LostMedia from '../../../scenes/LostMedia'
+import LostMap from '../../../scenes/LostMap'
 import Conversation from '../../../scenes/Conversation'
 import Bees from '../../../components/Bees'
 import AccountSettings from '../../../scenes/AccountSettings'
@@ -21,8 +23,6 @@ import Notifications from '../../../scenes/Notifications'
 import ChangeName from '../../../scenes/Settings/ChangeName'
 import ChangePassword from '../../../scenes/Settings/ChangePassword'
 import ChangePhoneNumber from '../../../scenes/Settings/ChangePhoneNumber'
-import ChangeNotificationsSettings from '../../../scenes/Settings/ChangeNotificationsSettings'
-import ChangeAdsSettings from '../../../scenes/Settings/ChangeAdsSettings'
 import Help from '../../../scenes/Help'
 import About from '../../../scenes/About'
 // import Details from 'scenes/details'
@@ -74,6 +74,24 @@ export const HomeNavigator = () => (
     <Stack.Screen
       name="Media"
       component={Media}
+      options={({ navigation }) => ({
+        title: '',
+        headerLeft: () => <HeaderBackward navigation={navigation} />,
+        headerRight: () => <HeaderRight icon={'ellipsis-v'} />,
+      })}
+    />
+    <Stack.Screen
+      name="LostMedia"
+      component={LostMedia}
+      options={({ navigation }) => ({
+        title: '',
+        headerLeft: () => <HeaderBackward navigation={navigation} />,
+        headerRight: () => <HeaderRight icon={'ellipsis-v'} />,
+      })}
+    />
+    <Stack.Screen
+      name="LostMap"
+      component={LostMap}
       options={({ navigation }) => ({
         title: '',
         headerLeft: () => <HeaderBackward navigation={navigation} />,
@@ -189,24 +207,6 @@ export const HomeNavigator = () => (
       })}
     />
     <Stack.Screen
-      name="ChangeNotificationsSettings"
-      component={ChangeNotificationsSettings}
-      options={({ navigation }) => ({
-        title: 'ChangeNotificationsSettings',
-        headerLeft: () => <HeaderBackward navigation={navigation} />,
-        headerTitle: () => <HeaderTitle title="Go Back" />,
-      })}
-    />
-    <Stack.Screen
-      name="ChangeAdsSettings"
-      component={ChangeAdsSettings}
-      options={({ navigation }) => ({
-        title: 'ChangeAdsSettings',
-        headerLeft: () => <HeaderBackward navigation={navigation} />,
-        headerTitle: () => <HeaderTitle title="Go Back" />,
-      })}
-    />
-    <Stack.Screen
       name="Help"
       component={Help}
       options={({ navigation }) => ({
@@ -220,6 +220,15 @@ export const HomeNavigator = () => (
       component={About}
       options={({ navigation }) => ({
         title: 'About',
+        headerLeft: () => <HeaderBackward navigation={navigation} />,
+        headerTitle: () => <HeaderTitle title="Go Back" />,
+      })}
+    />
+    <Stack.Screen
+      name="Conversation"
+      component={Conversation}
+      options={({ navigation }) => ({
+        title: 'Conversation',
         headerLeft: () => <HeaderBackward navigation={navigation} />,
         headerTitle: () => <HeaderTitle title="Go Back" />,
       })}
