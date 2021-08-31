@@ -1,18 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { View, Text, StyleSheet, Dimensions } from 'react-native'
-import { ListItem, Avatar } from 'react-native-elements'
+import { ListItem, Switch } from 'react-native-elements'
 import FontIcon from 'react-native-vector-icons/FontAwesome5'
 import { colors } from '../../theme/colors'
 import TopMargin from '../../components/TopMargin'
 const { width } = Dimensions.get("window")
 
 const AccountSettings = ({ navigation }) => {
+    const [ isAds, setAds ] = useState(true)
+    const [ isNotified, setNofied ] = useState(true)
     return (
         <View style={styles.container}>
             <TopMargin />
-            <View style={{width: width}}>
+            <View style={{ width: width }}>
                 <ListItem bottomDivider
-                onPress={()=> navigation.navigate("ProfileInformations")}
+                    onPress={() => navigation.navigate("ProfileInformations")}
                 >
                     <View style={{ width: 25 }}>
                         <FontIcon
@@ -28,7 +30,7 @@ const AccountSettings = ({ navigation }) => {
                     <ListItem.Chevron />
                 </ListItem>
                 <ListItem bottomDivider
-                onPress={()=> navigation.navigate('ChangeNotificationsSettings')}
+                    onPress={() => setNofied(!isNotified)}
                 >
                     <View style={{ width: 25 }}>
                         <FontIcon
@@ -41,10 +43,10 @@ const AccountSettings = ({ navigation }) => {
                     <ListItem.Content>
                         <ListItem.Title>Notification</ListItem.Title>
                     </ListItem.Content>
-                    <ListItem.Chevron />
+                    <Switch value={isNotified} />
                 </ListItem>
                 <ListItem bottomDivider
-                onPress={()=> navigation.navigate('ChangeAdsSettings')}
+                onPress={()=> setAds(!isAds)}
                 >
                     <View style={{ width: 25 }}>
                         <FontIcon
@@ -57,10 +59,10 @@ const AccountSettings = ({ navigation }) => {
                     <ListItem.Content>
                         <ListItem.Title >Ads</ListItem.Title>
                     </ListItem.Content>
-                    <ListItem.Chevron />
+                    <Switch value={isAds} />
                 </ListItem>
                 <ListItem bottomDivider
-                onPress={()=> navigation.navigate('Help')}
+                    onPress={() => navigation.navigate('Help')}
                 >
                     <View style={{ width: 25 }}>
                         <FontIcon
@@ -76,7 +78,7 @@ const AccountSettings = ({ navigation }) => {
                     <ListItem.Chevron />
                 </ListItem>
                 <ListItem bottomDivider
-                onPress={()=> navigation.navigate('About')}
+                    onPress={() => navigation.navigate('About')}
                 >
                     <View style={{ width: 25 }}>
                         <FontIcon
