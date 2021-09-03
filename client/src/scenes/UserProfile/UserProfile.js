@@ -7,7 +7,7 @@ import FontIcon from 'react-native-vector-icons/FontAwesome5'
 const UserProfile = (props) => {
     return (
         <View>
-            <ProfileInfo />
+            <ProfileInfo {...props} context='other'/>
             <View style={styles.actions}>
                 <TouchableOpacity>
                     <FontIcon
