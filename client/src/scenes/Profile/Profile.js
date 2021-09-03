@@ -10,7 +10,7 @@ const Profile = (props) => {
     const [view, setView] = useState(true)
     return (
         <View>
-            <ProfileInfo />
+            <ProfileInfo {...props} context='owner'/>
             <View style={styles.switch}>
                 <TouchableOpacity>
                     <FontIcon
