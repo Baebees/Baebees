@@ -25,6 +25,7 @@ import ChangePassword from '../../../scenes/Settings/ChangePassword'
 import ChangePhoneNumber from '../../../scenes/Settings/ChangePhoneNumber'
 import Help from '../../../scenes/Help'
 import About from '../../../scenes/About'
+import Followers from '../../../scenes/Followers'
 // import Details from 'scenes/details'
 import HeaderLeft from './HeaderLeft'
 import HeaderTitle from './HeaderTitle'
@@ -343,6 +344,15 @@ export const ProfileNavigator = () => (
         title: 'Media',
         headerLeft: () => <HeaderBackward navigation={navigation} />,
         headerTitle: () => <HeaderTitle title="Profile" />,
+      })}
+    />
+    <Stack.Screen
+      name="Followers"
+      component={Followers}
+      options={({ navigation }) => ({
+        title: 'Followers',
+        headerLeft: () => <HeaderBackward navigation={navigation} />,
+        headerTitle: () => <HeaderTitle title="Go Back" />,
       })}
     />
   </Stack.Navigator>
