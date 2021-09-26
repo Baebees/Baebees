@@ -10,11 +10,18 @@ const ChangeName = (props) => {
         >
             {({ handleChange, handleBlur, handleSubmit, values }) => (
                 <View style={styles.container}>
-                    <Text style={styles.label}>Change UserName</Text>
+                    <Text style={styles.label}>New First Name</Text>
                     <TextInput
                         style={styles.inputs}
-                        onChangeText={handleChange('UserName')}
-                        onBlur={handleBlur('UserName')}
+                        onChangeText={handleChange('FirstName')}
+                        onBlur={handleBlur('FirstName')}
+                        value={values.UserName}
+                    />
+                    <Text style={styles.label}>New Last Name</Text>
+                    <TextInput
+                        style={styles.inputs}
+                        onChangeText={handleChange('LastName')}
+                        onBlur={handleBlur('LastName')}
                         value={values.UserName}
                     />
                     <Text style={styles.label}>Your Password</Text>
