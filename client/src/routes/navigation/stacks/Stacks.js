@@ -114,7 +114,6 @@ export const HomeNavigator = () => (
       options={({ navigation }) => ({
         title: 'AccountSettings',
         headerLeft: () => <HeaderBackward navigation={navigation} />,
-        headerTitle: () => <HeaderTitle title="Go Back" />,
       })}
     />
     <Stack.Screen
@@ -123,7 +122,6 @@ export const HomeNavigator = () => (
       options={({ navigation }) => ({
         title: 'Confidentiality',
         headerLeft: () => <HeaderBackward navigation={navigation} />,
-        headerTitle: () => <HeaderTitle title="Go Back" />,
       })}
     />
     <Stack.Screen
@@ -132,7 +130,6 @@ export const HomeNavigator = () => (
       options={({ navigation }) => ({
         title: 'Track',
         headerLeft: () => <HeaderBackward navigation={navigation} />,
-        headerTitle: () => <HeaderTitle title="Go Back" />,
       })}
     />
     <Stack.Screen
@@ -141,7 +138,6 @@ export const HomeNavigator = () => (
       options={({ navigation }) => ({
         title: 'Subscription',
         headerLeft: () => <HeaderBackward navigation={navigation} />,
-        headerTitle: () => <HeaderTitle title="Go Back" />,
       })}
     />
     <Stack.Screen
@@ -150,7 +146,6 @@ export const HomeNavigator = () => (
       options={({ navigation }) => ({
         title: 'Contact',
         headerLeft: () => <HeaderBackward navigation={navigation} />,
-        headerTitle: () => <HeaderTitle title="Go Back" />,
       })}
     />
     <Stack.Screen
@@ -159,7 +154,6 @@ export const HomeNavigator = () => (
       options={({ navigation }) => ({
         title: 'Payment',
         headerLeft: () => <HeaderBackward navigation={navigation} />,
-        headerTitle: () => <HeaderTitle title="Go Back" />,
       })}
     />
     <Stack.Screen
@@ -168,7 +162,6 @@ export const HomeNavigator = () => (
       options={({ navigation }) => ({
         title: 'ProfileInformations',
         headerLeft: () => <HeaderBackward navigation={navigation} />,
-        headerTitle: () => <HeaderTitle title="Go Back" />,
       })}
     />
     <Stack.Screen
@@ -177,7 +170,6 @@ export const HomeNavigator = () => (
       options={({ navigation }) => ({
         title: 'Notifications',
         headerLeft: () => <HeaderBackward navigation={navigation} />,
-        headerTitle: () => <HeaderTitle title="Go Back" />,
       })}
     />
     <Stack.Screen
@@ -186,7 +178,6 @@ export const HomeNavigator = () => (
       options={({ navigation }) => ({
         title: 'ChangeName',
         headerLeft: () => <HeaderBackward navigation={navigation} />,
-        headerTitle: () => <HeaderTitle title="Go Back" />,
       })}
     />
     <Stack.Screen
@@ -195,7 +186,6 @@ export const HomeNavigator = () => (
       options={({ navigation }) => ({
         title: 'ChangePassword',
         headerLeft: () => <HeaderBackward navigation={navigation} />,
-        headerTitle: () => <HeaderTitle title="Go Back" />,
       })}
     />
     <Stack.Screen
@@ -204,7 +194,6 @@ export const HomeNavigator = () => (
       options={({ navigation }) => ({
         title: 'ChangePhoneNumber',
         headerLeft: () => <HeaderBackward navigation={navigation} />,
-        headerTitle: () => <HeaderTitle title="Go Back" />,
       })}
     />
     <Stack.Screen
@@ -213,7 +202,6 @@ export const HomeNavigator = () => (
       options={({ navigation }) => ({
         title: 'Help',
         headerLeft: () => <HeaderBackward navigation={navigation} />,
-        headerTitle: () => <HeaderTitle title="Go Back" />,
       })}
     />
     <Stack.Screen
@@ -222,7 +210,6 @@ export const HomeNavigator = () => (
       options={({ navigation }) => ({
         title: 'About',
         headerLeft: () => <HeaderBackward navigation={navigation} />,
-        headerTitle: () => <HeaderTitle title="Go Back" />,
       })}
     />
     <Stack.Screen
@@ -231,7 +218,6 @@ export const HomeNavigator = () => (
       options={({ navigation }) => ({
         title: 'Conversation',
         headerLeft: () => <HeaderBackward navigation={navigation} />,
-        headerTitle: () => <HeaderTitle title="Go Back" />,
       })}
     />
   </Stack.Navigator>
@@ -352,7 +338,6 @@ export const ProfileNavigator = () => (
       options={({ navigation }) => ({
         title: 'Followers',
         headerLeft: () => <HeaderBackward navigation={navigation} />,
-        headerTitle: () => <HeaderTitle title="Go Back" />,
       })}
     />
   </Stack.Navigator>
